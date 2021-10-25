@@ -237,6 +237,7 @@
     #define STRING_DARKBLUE               "DarkBlue"
     #define STRING_DARKGREEN              "DarkGreen"
     #define STRING_DARKGRAY               "DarkGray"
+    #define STRING_COLDWHITE              "Cold White"
 
     // Menus
     #define STRING_HEAT                   "Heat"

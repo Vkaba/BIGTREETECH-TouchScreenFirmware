@@ -150,11 +150,12 @@ const char *const ledKeyString[2] = {
 
 const char * const ledString[LED_VECT_SIZE] = {"R", "G", "B", "W", "P", "I"};
 
-const LED_VECT ledRed =   {0xFF, 0x00, 0x00, 0x00, 0xFF, 0xFF};
-const LED_VECT ledGreen = {0x00, 0xFF, 0x00, 0x00, 0xFF, 0xFF};
-const LED_VECT ledBlue =  {0x00, 0x00, 0xFF, 0x00, 0xFF, 0xFF};
-const LED_VECT ledWhite = {0xFF, 0xFF, 0xFF, 0x00, 0xFF, 0xFF};
-const LED_VECT ledOff =   {0x00, 0x00, 0x00, 0x00, 0x00, 0xFF};
+const LED_VECT ledRed =       {0xFF, 0x00, 0x00, 0x00, 0xFF, 0xFF};
+const LED_VECT ledGreen =     {0x00, 0xFF, 0x00, 0x00, 0xFF, 0xFF};
+const LED_VECT ledBlue =      {0x00, 0x00, 0xFF, 0x00, 0xFF, 0xFF};
+const LED_VECT ledWhite =     {0xFF, 0xFF, 0xFF, 0x00, 0xFF, 0xFF};
+const LED_VECT ledColdWhite = {0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF};
+const LED_VECT ledOff =       {0x00, 0x00, 0x00, 0x00, 0x00, 0xFF};
 
 LED_VECT ledValue = {0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF};
 
@@ -516,8 +517,8 @@ const MENUITEMS LEDColorItems = {
     {ICON_RGB_GREEN,               LABEL_GREEN},
     {ICON_RGB_BLUE,                LABEL_BLUE},
     {ICON_RGB_WHITE,               LABEL_WHITE},
-    {ICON_CUSTOM,                  LABEL_CUSTOM},
-    {ICON_RGB_WHITE,               LABEL_ON},
+    {ICON_RGB_WHITE,               LABEL_COLDWHITE},
+    {ICON_CUSTOM,                  LABEL_CUSTOM},    
     {ICON_RGB_OFF,                 LABEL_OFF},
     {ICON_BACK,                    LABEL_BACK},
   }
@@ -554,11 +555,16 @@ void menuLEDColor(void)
         ledSetValue(&ledWhite, true);
         break;
 
-      // custom LED color
+      // Cold White
       case KEY_ICON_4:
-        OPEN_MENU(menuLEDColorCustom);
+        ledSetValue(&ledColdWhite, true);
         break;
 
+      // custom LED color
+      case KEY_ICON_5:
+        OPEN_MENU(menuLEDColorCustom);
+        break;
+      
       // turn off
       case KEY_ICON_6:
         ledSendValue(&ledOff);

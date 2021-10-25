@@ -244,6 +244,7 @@ extern "C" {
 #define LANG_KEY_DARKBLUE                     "label_darkblue:"
 #define LANG_KEY_DARKGREEN                    "label_darkgreen:"
 #define LANG_KEY_DARKGRAY                     "label_darkgray:"
+#define LANG_KEY_COLDWHITE                    "label_coldwhite:"
 
 // Menus
 #define LANG_KEY_HEAT                         "label_heat:"

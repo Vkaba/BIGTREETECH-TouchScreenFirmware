@@ -27,6 +27,7 @@ extern "C" {
 #define DARKGREEN     0x0340
 #define GRAY          0X8430
 #define DARKGRAY      0x2124
+#define COLDWHITE     0xFFFF
 
 #define MAT_RED       0xE124
 #define MAT_YELLOW    0xED80
