@@ -175,7 +175,7 @@ void ledGetValue(LED_VECT * led)
 
 void ledSetValue(const LED_VECT * led, bool skipNeopixel)
 {
-  int size = skipNeopixel ? LED_VECT_SIZE - 3 : LED_VECT_SIZE;
+  int size = skipNeopixel ? LED_VECT_SIZE - 2 : LED_VECT_SIZE;
 
   for (int i = 0; i < size; i++)
     ledValue[i] = (*led)[i];
